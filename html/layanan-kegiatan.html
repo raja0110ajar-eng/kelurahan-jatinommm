@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Layanan dan Kegiatan Kelurahan Jatinom" />
+  <title>Layanan & Kegiatan — Kelurahan Jatinom</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/png" href="../asset/img/logo vektor.final.png" />
+  <style>
+    .flyer-card {
+      background: var(--putih);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+    }
+    .flyer-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+    .flyer-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+    .flyer-info {
+      padding: 1rem;
+      text-align: center;
+    }
+    .flyer-info h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--ungu);
+    }
+    .flyer-info p {
+      font-size: 0.8rem;
+      color: var(--teks-kedua);
+      margin-bottom: 0.75rem;
+    }
+    .download-btn {
+      display: inline-block;
+      background: var(--emas);
+      color: var(--hitam);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      text-align: center;
+      font-family: inherit;
+    }
+    .download-btn:hover {
+      background: var(--emas-muda);
+      transform: scale(1.02);
+    }
+    .btn-ungu {
+      background: var(--ungu);
+      color: var(--krem);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .btn-ungu:hover {
+      background: var(--ungu-muda);
+      transform: scale(1.02);
+    }
+    @media (max-width: 768px) {
+      .flyer-card img {
+        aspect-ratio: 4/3;
+      }
+      .galeri-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .galeri-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- NAVIGASI -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <img src="../asset/img/logo vektor.final.png" alt="Logo Kelurahan Jatinom" />
+        <div class="nav-brand-teks">
+          <span class="nama">Kelurahan Jatinom</span>
+          <span class="sub">Kec. Jatinom · Kab. Klaten</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li class="nav-dropdown">
+          <a href="#">Profil</a>
+          <ul class="dropdown-menu">
+            <li><a href="profile/struktur-pemerintahan.html">Struktur Pemerintahan</a></li>
+            <li><a href="profile/tugas-fungsi.html">Tugas & Fungsi</a></li>
+            <li><a href="profile/visi-misi.html">Visi & Misi</a></li>
+            <li><a href="profile/monografi-kependudukan.html">Monografi Kependudukan</a></li>
+            <li><a href="profile/sejarah-jatinom.html">Sejarah Jatinom</a></li>
+          </ul>
+        </li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="layanan-kegiatan.html" class="aktif">Layanan & Kegiatan</a></li>
+        <li><a href="regulasi.html">Regulasi</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="btn-cari" title="Cari">🔍</button>
+        <button id="btn-tema" title="Ganti Tema">🌙</button>
+        <button id="btn-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- SEARCH OVERLAY -->
+<div id="search-overlay">
+  <button id="btn-tutup-search">✕</button>
+  <div class="search-box">
+    <input type="text" id="input-cari" placeholder="Cari informasi di Kelurahan Jatinom..." autocomplete="off" />
+    <p class="search-hint">Tekan <kbd>ESC</kbd> untuk menutup · Tekan <kbd>Enter</kbd> untuk mencari</p>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section style="background:var(--ungu-tua);padding:8rem 0 4rem;position:relative;overflow:hidden;">
+  <div class="hero-ornamen">
+    <div class="ornamen-lingkaran"></div>
+    <div class="ornamen-lingkaran"></div>
+  </div>
+  <div class="container" style="position:relative;z-index:2;text-align:center;">
+    <span style="display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--emas);margin-bottom:1rem;">Pelayanan & Informasi</span>
+    <h1 style="color:var(--krem);font-size:clamp(2rem,5vw,4rem);">Layanan & <span style="color:var(--emas);">Kegiatan</span></h1>
+    <p style="color:rgba(245,230,200,0.65);margin-top:1rem;max-width:500px;margin-left:auto;margin-right:auto;">Berbagai layanan administrasi dan kegiatan masyarakat Kelurahan Jatinom</p>
+  </div>
+</section>
+
+<!-- LAYANAN ADMINISTRASI -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-masuk">
+      <span class="label">Layanan</span>
+      <h2>Layanan Administrasi</h2>
+      <div class="divider-emas"></div>
+    </div>
+
+    <div class="info-grid fade-masuk delay-1">
+      <div class="info-kartu">
+        <div class="ikon">📄</div>
+        <h4>Surat Keterangan</h4>
+        <p>Domisili, tidak mampu, usaha, dan berbagai surat keterangan lainnya.</p>
+        <button class="download-btn" data-file="Formulir-Surat-Keterangan.pdf" data-type="form">Unduh Formulir ↓</button>
+      </div>
+      <div class="info-kartu">
+        <div class="ikon">🪪</div>
+        <h4>Administrasi Kependudukan</h4>
+        <p>Pengantar KTP, KK, akta kelahiran, dan dokumen kependudukan lainnya.</p>
+        <button class="download-btn" data-file="Formulir-Kependudukan.pdf" data-type="form">Unduh Formulir ↓</button>
+      </div>
+      <div class="info-kartu">
+        <div class="ikon">🏠</div>
+        <h4>IMB & Pertanahan</h4>
+        <p>Informasi dan surat pengantar untuk IMB, sertifikat tanah, dan PBB.</p>
+        <button class="download-btn" data-file="Formulir-IMB-Pertanahan.pdf" data-type="form">Unduh Formulir ↓</button>
+      </div>
+      <div class="info-kartu">
+        <div class="ikon">📞</div>
+        <h4>Pengaduan Masyarakat</h4>
+        <p>Saluran aspirasi dan pengaduan untuk meningkatkan kualitas pelayanan.</p>
+        <button class="download-btn" data-target="modal-aduan" style="background:var(--emas);color:var(--hitam);">Kirim Aduan →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLYER KEGIATAN -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-header fade-masuk">
+      <span class="label">Kegiatan</span>
+      <h2>Flyer <span class="teks-emas">Kegiatan</span></h2>
+      <div class="divider-emas"></div>
+    </div>
+
+    <div class="galeri-grid fade-masuk delay-2" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="flyer-card">
+        <img src="../asset/flyer/BAZAAR%20RAMADHAN.png" alt="Bazaar Ramadhan">
+        <div class="flyer-info">
+          <h4>Bazaar Ramadhan</h4>
+          <p>13-16 Maret 2025 · Sepanjang Jalan Jatinom</p>
+          <button class="download-btn" data-file="BAZAAR RAMADHAN.png" data-type="flyer">📥 Download Flyer</button>
+        </div>
+      </div>
+      <div class="flyer-card">
+        <img src="../asset/flyer/CAR%20FREE%20DAY.png" alt="Car Free Day">
+        <div class="flyer-info">
+          <h4>Car Free Day</h4>
+          <p>Kegiatan olahraga dan rekreasi bersama warga</p>
+          <button class="download-btn" data-file="CAR FREE DAY.png" data-type="flyer">📥 Download Flyer</button>
+        </div>
+      </div>
+      <div class="flyer-card">
+        <img src="../asset/flyer/HUT%20INDONESIA.png" alt="HUT Indonesia">
+        <div class="flyer-info">
+          <h4>Gebyar Festival HUT Indonesia</h4>
+          <p>16.00 WIB · Meriahkan kemerdekaan RI</p>
+          <button class="download-btn" data-file="HUT INDONESIA.png" data-type="flyer">📥 Download Flyer</button>
+        </div>
+      </div>
+      <div class="flyer-card">
+        <img src="../asset/flyer/KAJIAN%20RUTIN.png" alt="Kajian Rutin">
+        <div class="flyer-info">
+          <h4>Kajian Rutin</h4>
+          <p>Ustadz Hannan Attaki · Tema: Guna Al-Qur'an dalam Berperilaku</p>
+          <button class="download-btn" data-file="KAJIAN RUTIN.png" data-type="flyer">📥 Download Flyer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOKUMEN DOWNLOAD -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-masuk">
+      <span class="label">Dokumen</span>
+      <h2>Unduh <span class="teks-emas">Formulir</span></h2>
+      <div class="divider-emas"></div>
+    </div>
+
+    <div class="info-grid fade-masuk delay-3">
+      <div class="info-kartu">
+        <div class="ikon">📥</div>
+        <h4>Formulir Pengajuan Surat</h4>
+        <p>Download formulir untuk berbagai keperluan administrasi</p>
+        <button class="download-btn" data-file="Formulir-Pengajuan-Surat.pdf" data-type="dokumen">Download PDF ↓</button>
+      </div>
+      <div class="info-kartu">
+        <div class="ikon">📥</div>
+        <h4>Persyaratan KTP & KK</h4>
+        <p>Daftar persyaratan pembuatan KTP dan Kartu Keluarga</p>
+        <button class="download-btn" data-file="Persyaratan-KTP-KK.pdf" data-type="dokumen">Download PDF ↓</button>
+      </div>
+      <div class="info-kartu">
+        <div class="ikon">📥</div>
+        <h4>Panduan Layanan Publik</h4>
+        <p>Standar pelayanan dan prosedur administrasi kelurahan</p>
+        <button class="download-btn" data-file="Panduan-Layanan-Publik.pdf" data-type="dokumen">Download PDF ↓</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../asset/img/logo vektor.final.png" alt="Logo Jatinom" />
+        <h3>Kelurahan Jatinom</h3>
+        <p>Jl. Raya Jatinom, Kecamatan Jatinom,<br/>Kabupaten Klaten 57481,<br/>Provinsi Jawa Tengah</p>
+      </div>
+      <div class="footer-kolom">
+        <h5>Navigasi</h5>
+        <ul><li><a href="index.html">Beranda</a></li><li><a href="galeri.html">Galeri</a></li><li><a href="layanan-kegiatan.html">Layanan & Kegiatan</a></li><li><a href="regulasi.html">Regulasi</a></li></ul>
+      </div>
+      <div class="footer-kolom">
+        <h5>Profil</h5>
+        <ul><li><a href="profile/struktur-pemerintahan.html">Struktur Pemerintahan</a></li><li><a href="profile/visi-misi.html">Visi & Misi</a></li><li><a href="profile/sejarah-jatinom.html">Sejarah Jatinom</a></li><li><a href="profile/monografi-kependudukan.html">Monografi</a></li></ul>
+      </div>
+      <div class="footer-kolom">
+        <h5>Kontak</h5>
+        <ul><li><a href="#">📞 (0272) 551234</a></li><li><a href="#">✉ kel.jatinom@klaten.go.id</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bawah">
+      <p>© 2025 Kelurahan Jatinom · JATINOM HEBAT</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB & MODAL -->
+<div class="fab-group">
+  <button class="fab" id="btn-aduan" style="background:var(--ungu);color:var(--krem);" title="Aduan & Keluhan">💬<span class="fab-tooltip">Aduan & Keluhan</span></button>
+  <button class="fab" id="btn-penilaian" style="background:var(--emas);color:var(--hitam);" title="Nilai Website Ini">⭐<span class="fab-tooltip">Nilai Website Ini</span></button>
+</div>
+<button id="back-top" title="Kembali ke atas">↑</button>
+
+<div class="modal-overlay" id="modal-aduan">
+  <div class="modal-konten">
+    <button class="modal-tutup" data-tutup="modal-aduan">✕</button>
+    <h3 style="margin-bottom:0.5rem;">Aduan & Keluhan</h3>
+    <p style="margin-bottom:2rem;font-size:0.9rem;">Sampaikan masukan, keluhan, atau laporan Anda kepada pihak kelurahan.</p>
+    <div class="form-grup"><label>Nama Lengkap</label><input type="text" placeholder="Masukkan nama Anda" /></div>
+    <div class="form-grup"><label>Nomor Telepon</label><input type="tel" placeholder="08xx xxxx xxxx" /></div>
+    <div class="form-grup"><label>Jenis Aduan</label><select><option>Pilih jenis aduan...</option><option>Pelayanan Administrasi</option><option>Infrastruktur & Fasilitas</option><option>Kebersihan Lingkungan</option><option>Keamanan & Ketertiban</option><option>Lainnya</option></select></div>
+    <div class="form-grup"><label>Isi Aduan</label><textarea placeholder="Tuliskan aduan atau keluhan Anda secara jelas..."></textarea></div>
+    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Aduan</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-penilaian">
+  <div class="modal-konten" style="text-align:center;max-width:450px;">
+    <button class="modal-tutup" data-tutup="modal-penilaian">✕</button>
+    <div style="font-size:3rem;margin-bottom:1rem;">⭐</div>
+    <h3 style="margin-bottom:0.5rem;">Bagaimana Website Ini?</h3>
+    <p style="margin-bottom:2rem;font-size:0.9rem;">Penilaian Anda membantu kami untuk terus berkembang melayani warga Jatinom.</p>
+    <div class="rating-bintang" id="rating-bintang" style="justify-content:center;margin-bottom:1.5rem;">
+      <span class="bintang" data-nilai="1">★</span><span class="bintang" data-nilai="2">★</span><span class="bintang" data-nilai="3">★</span><span class="bintang" data-nilai="4">★</span><span class="bintang" data-nilai="5">★</span>
+    </div>
+    <div class="form-grup" style="text-align:left;"><label>Komentar (opsional)</label><textarea placeholder="Ada yang ingin Anda sampaikan?" style="min-height:80px;"></textarea></div>
+    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Penilaian</button>
+  </div>
+</div>
+
+<script src="../script.js"></script>
+<script>
+  // Fungsi download dengan konfirmasi Ya/Tidak
+  document.querySelectorAll('.download-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      // Jika tombol untuk membuka modal aduan
+      if (this.dataset.target === 'modal-aduan') {
+        document.getElementById('modal-aduan').classList.add('aktif');
+        return;
+      }
+      
+      const fileName = this.dataset.file;
+      const fileType = this.dataset.type;
+      
+      // Tentukan folder berdasarkan tipe file
+      let folder = '';
+      if (fileType === 'flyer') folder = '../asset/flyer/';
+      else folder = '../asset/dokumen/'; // untuk formulir/dokumen
+      
+      const fileUrl = folder + encodeURIComponent(fileName);
+      
+      // Konfirmasi download
+      const konfirmasi = confirm(`Apakah Anda ingin mendownload file "${fileName}"?`);
+      
+      if (konfirmasi) {
+        // Buat elemen link temporary untuk download
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = fileName;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    });
+  });
+</script>
+</body>
+</html>

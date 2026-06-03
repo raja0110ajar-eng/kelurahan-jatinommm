@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri - Kelurahan Jatinom</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/png" href="../asset/img/logo vektor.final.png" />
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="../asset/img/logo vektor.final.png" alt="Logo" />
+        <div class="nav-brand-teks">
+          <span class="nama">Kelurahan Jatinom</span>
+          <span class="sub">Kec. Jatinom · Kab. Klaten</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li class="nav-dropdown">
+          <a href="#">Profil</a>
+          <ul class="dropdown-menu">
+            <li><a href="profile/struktur-pemerintahan.html">Struktur Pemerintahan</a></li>
+            <li><a href="profile/tugas-fungsi.html">Tugas & Fungsi</a></li>
+            <li><a href="profile/visi-misi.html">Visi & Misi</a></li>
+            <li><a href="profile/monografi-kependudukan.html">Monografi Kependudukan</a></li>
+            <li><a href="profile/sejarah-jatinom.html">Sejarah Jatinom</a></li>
+          </ul>
+        </li>
+        <li><a href="galeri.html" class="aktif">Galeri</a></li>
+        <li><a href="layanan-kegiatan.html">Layanan & Kegiatan</a></li>
+        <li><a href="regulasi.html">Regulasi</a></li>
+      </ul>
+             <style>
+    [data-theme="light"] #navbar { background: #3D1152; }
+    [data-theme="light"] .nav-menu a { color: #F5E6C8; }
+    [data-theme="light"] .nav-menu a:hover, [data-theme="light"] .nav-menu a.aktif { color: #C9A84C; background: rgba(245,230,200,0.15); }
+    [data-theme="light"] .nav-brand-teks .nama { color: #F5E6C8; }
+    [data-theme="light"] .nav-brand-teks .sub { color: #E8D0A0; }
+    [data-theme="dark"] #navbar { background: #F5E6C8; }
+    [data-theme="dark"] .nav-menu a { color: #3D1152; }
+    [data-theme="dark"] .nav-menu a:hover, [data-theme="dark"] .nav-menu a.aktif { color: #5B1F6A; background: rgba(91,31,106,0.1); }
+    [data-theme="dark"] .nav-brand-teks .nama { color: #3D1152; }
+    [data-theme="dark"] .nav-brand-teks .sub { color: #5B1F6A; }
+    [data-theme="dark"] #btn-cari, [data-theme="dark"] #btn-tema, [data-theme="dark"] #btn-hamburger { background: rgba(91,31,106,0.1); color: #3D1152; }
+    [data-theme="dark"] .dropdown-menu { background: #F5E6C8; }
+    [data-theme="dark"] .dropdown-menu a { color: #3D1152; }
+    [data-theme="dark"] .dropdown-menu a:hover { background: rgba(91,31,106,0.08); color: #5B1F6A; }
+  </style>
+      <div class="nav-actions">
+        <button id="btn-cari">🔍</button>
+        <button id="btn-tema">🌙</button>
+        <button id="btn-hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="search-overlay">
+  <button id="btn-tutup-search">✕</button>
+  <div class="search-box">
+    <input type="text" id="input-cari" placeholder="Cari informasi..." />
+  </div>
+</div>
+
+<main>
+  <section class="section" style="padding-top: 8rem;">
+    <div class="container">
+      <div class="section-header fade-masuk">
+        <span class="label">Dokumentasi</span>
+        <h2>Galeri <span class="teks-emas">Kegiatan</span></h2>
+        <div class="divider-emas"></div>
+        <p>Berbagai kegiatan dan momen di Kelurahan Jatinom</p>
+      </div>
+
+      <div class="galeri-grid fade-masuk delay-1">
+        <div class="galeri-item">
+          <img src="../asset/img/WhatsApp%20Image%202026-06-02%20at%207.29.03%20AM.jpeg" alt="Kegiatan">
+          <div class="galeri-overlay"><p>Kegiatan Masyarakat</p></div>
+        </div>
+        <div class="galeri-item">
+          <img src="../asset/img/WhatsApp%20Image%202026-06-02%20at%207.29.04%20AM%20(1).jpeg" alt="Kantor">
+          <div class="galeri-overlay"><p>Kegiatan Masyarakat</p></div>
+        </div>
+        <div class="galeri-item">
+          <img src="../asset/img/WhatsApp%20Image%202026-06-02%20at%207.29.05%20AM.jpeg" alt="Tradisi">
+          <div class="galeri-overlay"><p>Kegaiatan Masyarakat</p></div>
+        </div>
+        <div class="galeri-item">
+          <img src="../asset/img/apem.jpg" alt="Apem">
+          <div class="galeri-overlay"><p>Kue Apem Jatinom</p></div>
+        </div>
+        <div class="galeri-item">
+          <img src="../asset/img/ki%20ageng%20gribig.jpg" alt="Makam">
+          <div class="galeri-overlay"><p>Makam Ki Ageng Gribig</p></div>
+        </div>
+        <div class="galeri-item">
+          <img src="../asset/img/peziarah.jpeg" alt="Peziarah">
+          <div class="galeri-overlay"><p>Peziarah</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../asset/img/logo vektor.final.png" alt="Logo" />
+        <h3>Kelurahan Jatinom</h3>
+        <p>Jl. Raya Jatinom, Kecamatan Jatinom,<br/>Kabupaten Klaten 57481</p>
+      </div>
+      <div class="footer-kolom">
+        <h5>Navigasi</h5>
+        <ul><li><a href="index.html">Beranda</a></li><li><a href="galeri.html">Galeri</a></li><li><a href="layanan-kegiatan.html">Layanan</a></li><li><a href="regulasi.html">Regulasi</a></li></ul>
+      </div>
+      <div class="footer-kolom">
+        <h5>Profil</h5>
+        <ul><li><a href="profile/struktur-pemerintahan.html">Struktur</a></li><li><a href="profile/visi-misi.html">Visi & Misi</a></li><li><a href="profile/sejarah-jatinom.html">Sejarah</a></li></ul>
+      </div>
+      <div class="footer-kolom">
+        <h5>Kontak</h5>
+        <ul><li><a href="#">📞 (0272) 551234</a></li><li><a href="#">✉ kel.jatinom@klaten.go.id</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bawah"><p>© 2025 Kelurahan Jatinom · JATINOM HEBAT</p></div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

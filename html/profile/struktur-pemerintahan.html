@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Struktur Pemerintahan Kelurahan Jatinom, Kecamatan Jatinom, Kabupaten Klaten" />
+  <title>Struktur Pemerintahan - Kelurahan Jatinom</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../asset/img/logo vektor.final.png" />
+  <style>
+    /* Navbar kontras langsung di HTML */
+    [data-theme="light"] #navbar { background: #3D1152; }
+    [data-theme="light"] .nav-menu a { color: #F5E6C8; }
+    [data-theme="light"] .nav-menu a:hover,
+    [data-theme="light"] .nav-menu a.aktif { color: #C9A84C; background: rgba(245,230,200,0.15); }
+    [data-theme="light"] .nav-brand-teks .nama { color: #F5E6C8; }
+    [data-theme="light"] .nav-brand-teks .sub { color: #E8D0A0; }
+
+    [data-theme="dark"] #navbar { background: #F5E6C8; }
+    [data-theme="dark"] .nav-menu a { color: #3D1152; }
+    [data-theme="dark"] .nav-menu a:hover,
+    [data-theme="dark"] .nav-menu a.aktif { color: #5B1F6A; background: rgba(91,31,106,0.1); }
+    [data-theme="dark"] .nav-brand-teks .nama { color: #3D1152; }
+    [data-theme="dark"] .nav-brand-teks .sub { color: #5B1F6A; }
+    [data-theme="dark"] #btn-cari,
+    [data-theme="dark"] #btn-tema,
+    [data-theme="dark"] #btn-hamburger { background: rgba(91,31,106,0.1); color: #3D1152; }
+    [data-theme="dark"] .dropdown-menu { background: #F5E6C8; }
+    [data-theme="dark"] .dropdown-menu a { color: #3D1152; }
+    [data-theme="dark"] .dropdown-menu a:hover { background: rgba(91,31,106,0.08); color: #5B1F6A; }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <img src="../../asset/img/logo vektor.final.png" alt="Logo Kelurahan Jatinom" />
+        <div class="nav-brand-teks">
+          <span class="nama">Kelurahan Jatinom</span>
+          <span class="sub">Kec. Jatinom · Kab. Klaten</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="../../index.html">Beranda</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="aktif">Profil</a>
+          <ul class="dropdown-menu">
+            <li><a href="struktur-pemerintahan.html">Struktur Pemerintahan</a></li>
+            <li><a href="tugas-fungsi.html">Tugas & Fungsi</a></li>
+            <li><a href="visi-misi.html">Visi & Misi</a></li>
+            <li><a href="monografi-kependudukan.html">Monografi Kependudukan</a></li>
+            <li><a href="sejarah-jatinom.html">Sejarah Jatinom</a></li>
+          </ul>
+        </li>
+        <li><a href="../galeri.html">Galeri</a></li>
+        <li><a href="../layanan-kegiatan.html">Layanan & Kegiatan</a></li>
+        <li><a href="../regulasi.html">Regulasi</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="btn-cari" title="Cari">🔍</button>
+        <button id="btn-tema" title="Ganti Tema">🌙</button>
+        <button id="btn-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="search-overlay">
+  <button id="btn-tutup-search">✕</button>
+  <div class="search-box">
+    <input type="text" id="input-cari" placeholder="Cari informasi di Kelurahan Jatinom..." autocomplete="off" />
+    <p class="search-hint">Tekan <kbd>ESC</kbd> untuk menutup · Tekan <kbd>Enter</kbd> untuk mencari</p>
+  </div>
+</div>
+
+<main>
+  <section class="section" style="padding-top: 8rem;">
+    <div class="container">
+      <div class="section-header fade-masuk">
+        <span class="label">Profil Kelurahan</span>
+        <h2>Struktur <span class="teks-emas">Pemerintahan</span></h2>
+        <div class="divider-emas"></div>
+        <p>Berikut adalah susunan perangkat Kelurahan Jatinom berdasarkan data terkini</p>
+      </div>
+
+      <div class="struktur-bagan fade-masuk delay-1">
+        <div class="struktur-level level-1">
+          <div class="struktur-card">Lurah<br/><small>Purwono, S.M.</small></div>
+        </div>
+        <div class="struktur-arrow">↓</div>
+        <div class="struktur-level level-2">
+          <div class="struktur-card">Sekretaris Kelurahan<br/><small>(ASN yang ditunjuk)</small></div>
+        </div>
+        <div class="struktur-arrow">↓</div>
+        <div class="struktur-level level-3">
+          <div class="struktur-card">Kasi Tata Pemerintahan<br/><small>(Dalam pengisian)</small></div>
+          <div class="struktur-card">Kasi Pembangunan & PM<br/><small>(Dalam pengisian)</small></div>
+          <div class="struktur-card">Kasi Kemasyarakatan<br/><small>Sriyatun, S.Sos.</small></div>
+        </div>
+      </div>
+
+      <div class="struktur-tabel fade-masuk delay-2" style="margin-top: 4rem;">
+        <h3>Daftar Perangkat Kelurahan Jatinom</h3>
+        <table>
+          <thead><tr><th>No</th><th>Jabatan</th><th>Nama</th><th>NIP</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>Plt. Lurah Jatinom</strong></td><td>Purwono, S.M.</td><td>19720506 200701 1 017</td><td>Penelaah Teknis Kebijakan</td></tr>
+            <tr><td>2</td><td><strong>Kepala Seksi Kemasyarakatan</strong></td><td>Sriyatun, S.Sos.</td><td>19680725 199603 2 005</td><td>Pelayanan sosial & keagamaan</td></tr>
+            <tr><td>3</td><td>Kepala Seksi Tata Pemerintahan</td><td colspan="2"><em>Dalam pengisian berkala</em></td><td>Administrasi kependudukan</td></tr>
+            <tr><td>4</td><td>Kepala Seksi Pembangunan & Pemberdayaan Masyarakat</td><td colspan="2"><em>Dalam pengisian berkala</em></td><td>Pembangunan & pemberdayaan</td></tr>
+            <tr><td>5</td><td>Sekretaris Kelurahan</td><td colspan="2"><em>ASN yang ditunjuk</em></td><td>Administrasi umum kelurahan</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../../asset/img/logo vektor.final.png" alt="Logo Jatinom" />
+        <h3>Kelurahan Jatinom</h3>
+        <p>Jl. Raya Jatinom, Kecamatan Jatinom,<br/>Kabupaten Klaten 57481,<br/>Provinsi Jawa Tengah</p>
+      </div>
+      <div class="footer-kolom"><h5>Navigasi</h5><ul><li><a href="../index.html">Beranda</a></li><li><a href="../galeri.html">Galeri</a></li><li><a href="../layanan-kegiatan.html">Layanan & Kegiatan</a></li><li><a href="../regulasi.html">Regulasi</a></li></ul></div>
+      <div class="footer-kolom"><h5>Profil</h5><ul><li><a href="struktur-pemerintahan.html">Struktur Pemerintahan</a></li><li><a href="visi-misi.html">Visi & Misi</a></li><li><a href="sejarah-jatinom.html">Sejarah Jatinom</a></li><li><a href="monografi-kependudukan.html">Monografi</a></li></ul></div>
+      <div class="footer-kolom"><h5>Kontak</h5><ul><li><a href="#">📞 (0272) 551234</a></li><li><a href="#">✉ kel.jatinom@klaten.go.id</a></li></ul></div>
+    </div>
+    <div class="footer-bawah"><p>© 2025 Kelurahan Jatinom · JATINOM HEBAT</p></div>
+  </div>
+</footer>
+
+<div class="fab-group">
+  <button class="fab" id="btn-aduan" style="background:var(--ungu);color:var(--krem);" title="Aduan & Keluhan">
+    💬
+    <span class="fab-tooltip">Aduan & Keluhan</span>
+  </button>
+  <button class="fab" id="btn-penilaian" style="background:var(--emas);color:var(--hitam);" title="Nilai Website Ini">
+    ⭐
+    <span class="fab-tooltip">Nilai Website Ini</span>
+  </button>
+</div>
+
+<button id="back-top" title="Kembali ke atas">↑</button>
+
+<div class="modal-overlay" id="modal-aduan">
+  <div class="modal-konten">
+    <button class="modal-tutup" data-tutup="modal-aduan">✕</button>
+    <h3 style="margin-bottom:0.5rem;">Aduan & Keluhan</h3>
+    <p style="margin-bottom:2rem;font-size:0.9rem;">Sampaikan masukan, keluhan, atau laporan Anda kepada pihak kelurahan.</p>
+    <div class="form-grup"><label>Nama Lengkap</label><input type="text" placeholder="Masukkan nama Anda" /></div>
+    <div class="form-grup"><label>Nomor Telepon</label><input type="tel" placeholder="08xx xxxx xxxx" /></div>
+    <div class="form-grup"><label>Jenis Aduan</label><select><option>Pilih jenis aduan...</option><option>Pelayanan Administrasi</option><option>Infrastruktur & Fasilitas</option><option>Kebersihan Lingkungan</option><option>Keamanan & Ketertiban</option><option>Lainnya</option></select></div>
+    <div class="form-grup"><label>Isi Aduan</label><textarea placeholder="Tuliskan aduan atau keluhan Anda secara jelas..."></textarea></div>
+    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Aduan</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-penilaian">
+  <div class="modal-konten" style="text-align:center;max-width:450px;">
+    <button class="modal-tutup" data-tutup="modal-penilaian">✕</button>
+    <div style="font-size:3rem;margin-bottom:1rem;">⭐</div>
+    <h3 style="margin-bottom:0.5rem;">Bagaimana Website Ini?</h3>
+    <p style="margin-bottom:2rem;font-size:0.9rem;">Penilaian Anda membantu kami untuk terus berkembang melayani warga Jatinom.</p>
+    <div class="rating-bintang" id="rating-bintang" style="justify-content:center;margin-bottom:1.5rem;">
+      <span class="bintang" data-nilai="1">★</span><span class="bintang" data-nilai="2">★</span><span class="bintang" data-nilai="3">★</span><span class="bintang" data-nilai="4">★</span><span class="bintang" data-nilai="5">★</span>
+    </div>
+    <div class="form-grup" style="text-align:left;"><label>Komentar (opsional)</label><textarea placeholder="Ada yang ingin Anda sampaikan?" style="min-height:80px;"></textarea></div>
+    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Penilaian</button>
+  </div>
+</div>
+
+<script src="../../script.js"></script>
+
+<style>
+.struktur-bagan { text-align: center; margin: 2rem 0; }
+.struktur-level { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 1rem 0; }
+.level-3 { gap: 2rem; }
+.struktur-card { background: var(--ungu); color: var(--krem); padding: 1rem 1.5rem; border-radius: 12px; min-width: 180px; border: 1px solid var(--emas); }
+.struktur-card small { font-size: 0.75rem; color: var(--ungu-pucat); display: block; margin-top: 0.25rem; }
+.struktur-arrow { font-size: 1.5rem; color: var(--emas); margin: 0.25rem 0; }
+.struktur-tabel h3 { margin-bottom: 1rem; font-family: var(--font-display); }
+table { width: 100%; border-collapse: collapse; background: var(--putih); border-radius: 12px; overflow: hidden; }
+[data-theme="dark"] table { background: var(--bg-kedua); }
+th { background: var(--ungu); color: var(--krem); padding: 0.75rem; text-align: left; }
+td { padding: 0.75rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+[data-theme="dark"] td { border-bottom-color: rgba(255,255,255,0.05); }
+@media (max-width: 768px) { .struktur-card { min-width: auto; padding: 0.75rem 1rem; font-size: 0.85rem; } .level-3 { gap: 0.75rem; } td,th { font-size: 0.8rem; padding: 0.5rem; } }
+</style>
+</body>
+</html>

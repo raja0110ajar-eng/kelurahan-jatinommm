@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website Resmi Kelurahan Jatinom, Kecamatan Jatinom, Kabupaten Klaten — Melayani dengan Ikhlas, Membangun dengan Amanah." />
+  <title>Kelurahan Jatinom — Jatinom, Klaten</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="asset/img/logo vektor.final.png" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     PROGRESS BAR
+═══════════════════════════════════════════════ -->
+<div id="progress-bar"></div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGASI
+═══════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+
+      <!-- Brand -->
+      <a href="index.html" class="nav-brand">
+        <img src="asset/img/logo vektor.final.png" alt="Logo Kelurahan Jatinom" />
+        <div class="nav-brand-teks">
+          <span class="nama">Kelurahan Jatinom</span>
+          <span class="sub">Kec. Jatinom · Kab. Klaten</span>
+        </div>
+      </a>
+
+      <!-- Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="aktif">Beranda</a></li>
+        <li class="nav-dropdown">
+          <a href="#">Profil</a>
+          <ul class="dropdown-menu">
+            <li><a href="./html/profile/struktur-pemerintahan.html">Struktur Pemerintahan</a></li>
+            <li><a href="./html/profile/tugas-fungsi.html">Tugas & Fungsi</a></li>
+            <li><a href="./html/profile/visi-misi.html">Visi & Misi</a></li>
+            <li><a href="./html/profile/monografi-kependudukan.html">Monografi Kependudukan</a></li>
+            <li><a href="./html/profile/sejarah-jatinom.html">Sejarah Jatinom</a></li>
+          </ul>
+        </li>
+        <li><a href="./html/galeri.html">Galeri</a></li>
+        <li><a href="./html/layanan-kegiatan.html">Layanan & Kegiatan</a></li>
+        <li><a href="./html/regulasi.html">Regulasi</a></li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button id="btn-cari" title="Cari">🔍</button>
+        <button id="btn-tema" title="Ganti Tema">🌙</button>
+        <button id="btn-hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     SEARCH OVERLAY
+═══════════════════════════════════════════════ -->
+<div id="search-overlay">
+  <button id="btn-tutup-search">✕</button>
+  <div class="search-box">
+    <input type="text" id="input-cari" placeholder="Cari informasi di Kelurahan Jatinom..." autocomplete="off" />
+    <p class="search-hint">Tekan <kbd>ESC</kbd> untuk menutup · Tekan <kbd>Enter</kbd> untuk mencari</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<header class="hero">
+
+  <!-- Video latar -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="asset/video/ssstik.io_1780461759440.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Ornamen -->
+  <div class="hero-ornamen">
+    <div class="ornamen-lingkaran"></div>
+    <div class="ornamen-lingkaran"></div>
+    <div class="ornamen-lingkaran"></div>
+    <!-- Ornamen SVG daun jati -->
+    <svg class="ornamen-jati" style="width:500px;height:500px;bottom:-100px;left:-100px;" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 10 C60 10, 10 50, 10 100 C10 150, 60 190, 100 190 C140 190, 190 150, 190 100 C190 50, 140 10, 100 10 Z M100 30 C75 50, 50 75, 50 100 C50 125, 75 150, 100 170 C125 150, 150 125, 150 100 C150 75, 125 50, 100 30 Z" fill="white"/>
+      <line x1="100" y1="30" x2="100" y2="170" stroke="white" stroke-width="2"/>
+      <line x1="70" y1="70" x2="100" y2="90" stroke="white" stroke-width="1.5"/>
+      <line x1="130" y1="70" x2="100" y2="90" stroke="white" stroke-width="1.5"/>
+      <line x1="65" y1="100" x2="100" y2="115" stroke="white" stroke-width="1.5"/>
+      <line x1="135" y1="100" x2="100" y2="115" stroke="white" stroke-width="1.5"/>
+      <line x1="75" y1="130" x2="100" y2="140" stroke="white" stroke-width="1.5"/>
+      <line x1="125" y1="130" x2="100" y2="140" stroke="white" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-konten">
+
+      <!-- Teks -->
+      <div class="hero-teks">
+        <div class="label-atas">Kelurahan Jatinom · Est. Abad ke-17</div>
+        <h1>
+          Sugeng Rawuh
+          <span>ing Jatinom</span>
+        </h1>
+        <p class="deskripsi">
+          Tanah warisan Ki Ageng Gribig — di mana pohon jati tetap muda,
+          apem dibagikan dengan ikhlas, dan semangat melayani tak pernah
+          padam bersama waktu.
+        </p>
+        <div class="hero-actions">
+          <a href="layanan.html" class="btn btn-primer">Lihat Layanan →</a>
+          <a href="profile/sejarah-jatinom.html" class="btn btn-sekunder">Sejarah Kami</a>
+        </div>
+      </div>
+
+<section class="sambutan-sistem" id="sambutanSistem">
+  <div class="container">
+    <div class="sambutan-sistem-wrapper">
+      <div class="sambutan-sistem-frame">
+        <video id="videoAnimasiSambutan" class="sambutan-sistem-video" playsinline>
+          <source src="asset/video/animation/AnimasiHome (1).mp4" type="video/mp4" />
+        </video>
+        <div class="sambutan-sistem-controls">
+          <button id="replayAnimasiSambutan" class="sambutan-sistem-replay">
+            ⟳ Putar Ulang
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
+  </div>
+
+  <!-- Teks berjalan -->
+  <div class="ticker-wrapper">
+    <div class="ticker-inner">
+      <span class="ticker-item">Selamat datang di Website Resmi Kelurahan Jatinom</span>
+      <span class="ticker-item">Tradisi Yaa Qowiyyu — Warisan Ki Ageng Gribig yang Abadi</span>
+      <span class="ticker-item">6.422 Jiwa · 9 RW · 33 RT · 1,54 km²</span>
+      <span class="ticker-item">Melayani dengan Ikhlas, Membangun dengan Amanah</span>
+      <span class="ticker-item">Pasar Legi Jatinom — Jantung Ekonomi Kecamatan</span>
+      <span class="ticker-item">Selamat datang di Website Resmi Kelurahan Jatinom</span>
+      <span class="ticker-item">Tradisi Yaa Qowiyyu — Warisan Ki Ageng Gribig yang Abadi</span>
+      <span class="ticker-item">6.422 Jiwa · 9 RW · 33 RT · 1,54 km²</span>
+      <span class="ticker-item">Melayani dengan Ikhlas, Membangun dengan Amanah</span>
+      <span class="ticker-item">Pasar Legi Jatinom — Jantung Ekonomi Kecamatan</span>
+    </div>
+  </div>
+
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     STATISTIK
+═══════════════════════════════════════════════ -->
+<section class="stat-band">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-item fade-masuk">
+        <div class="stat-angka">6<span>.422</span></div>
+        <div class="stat-label">Total Penduduk</div>
+      </div>
+      <div class="stat-item fade-masuk delay-1">
+        <div class="stat-angka">2<span>.148</span></div>
+        <div class="stat-label">Kepala Keluarga</div>
+      </div>
+      <div class="stat-item fade-masuk delay-2">
+        <div class="stat-angka">33<span> RT</span></div>
+        <div class="stat-label">Rukun Tetangga</div>
+      </div>
+      <div class="stat-item fade-masuk delay-3">
+        <div class="stat-angka">9<span> RW</span></div>
+        <div class="stat-label">Rukun Warga</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     TENTANG JATINOM
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+
+      <!-- Kiri — Teks -->
+      <div class="fade-masuk">
+        <div class="section-header" style="text-align:left;">
+          <span class="label">Tentang Kami</span>
+          <h2>Jatinom —<br/><em>Jati sing tansah enom</em></h2>
+          <div class="divider-emas" style="margin-left:0;"></div>
+        </div>
+        <p style="margin-bottom:1.5rem;">
+          Kelurahan Jatinom adalah pusat pemerintahan dan ekonomi Kecamatan Jatinom,
+          Kabupaten Klaten. Dengan luas 1,54 km² yang dihuni 6.422 jiwa, kelurahan ini
+          menjadi simpul kehidupan masyarakat yang harmonis antara tradisi dan modernitas.
+        </p>
+        <p style="margin-bottom:2rem;">
+          Nama <strong>Jatinom</strong> lahir dari filosofi mendalam: <em>jati</em> yang berarti pohon jati
+          sekaligus kebenaran sejati, dan <em>nom</em> (anom) yang berarti muda — sebuah
+          pengingat bahwa semangat masyarakatnya selalu segar, adaptif, dan berakar pada nilai luhur.
+        </p>
+        <a href="profile/sejarah-jatinom.html" class="btn btn-ungu">Baca Sejarah Lengkap →</a>
+      </div>
+
+      <!-- Kanan — Info cards -->
+      <div class="fade-masuk delay-2">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="info-kartu">
+            <div class="ikon">🕌</div>
+            <h4>14 Masjid</h4>
+            <p>Ditambah 19 mushola yang tersebar di setiap sudut kelurahan.</p>
+          </div>
+          <div class="info-kartu" style="border-top-color:var(--emas);">
+            <div class="ikon">📚</div>
+            <h4>10 Sekolah</h4>
+            <p>Dari TK hingga SMA — fasilitas pendidikan lengkap untuk warga.</p>
+          </div>
+          <div class="info-kartu" style="border-top-color:var(--emas);">
+            <div class="ikon">🏪</div>
+            <h4>Pasar Legi</h4>
+            <p>Pusat perdagangan tradisional berskala kecamatan yang berusia ratusan tahun.</p>
+          </div>
+          <div class="info-kartu">
+            <div class="ikon">🏥</div>
+            <h4>Puskesmas</h4>
+            <p>1 Puskesmas rawat inap ditambah 9 posyandu aktif melayani warga.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     YAA QOWIYYU — TRADISI KEBANGGAAN
+═══════════════════════════════════════════════ -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-header fade-masuk">
+      <span class="label">Warisan Budaya</span>
+      <h2>Tradisi Yaa Qowiyyu</h2>
+      <div class="divider-emas"></div>
+      <p style="max-width:600px;margin:1rem auto 0;">
+        Setiap Jumat bulan Sapar, ribuan peziarah dari seluruh nusantara berkumpul
+        untuk memperebutkan apem — simbol sedekah, pemaafan, dan kekuatan iman
+        yang diwariskan Ki Ageng Gribig sejak 1667 Masehi.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;">
+      <article class="kartu fade-masuk delay-1">
+        <div style="height:200px;background:linear-gradient(135deg,var(--ungu-tua),var(--ungu));display:flex;align-items:center;justify-content:center;font-size:4rem;">🕌</div>
+        <div class="kartu-isi">
+          <span class="badge badge-emas" style="margin-bottom:0.75rem;">Sejak 1667 M</span>
+          <h4>Inisiasi Ki Ageng Gribig</h4>
+          <p style="margin-top:0.5rem;font-size:0.9rem;">Dimulai sepulangnya dari Mekah, beliau berbagi apem kepada ribuan murid sebagai wujud syukur dan syiar Islam.</p>
+        </div>
+      </article>
+
+      <article class="kartu fade-masuk delay-2">
+        <div style="height:200px;background:linear-gradient(135deg,var(--emas),var(--krem-tua));display:flex;align-items:center;justify-content:center;font-size:4rem;">🫓</div>
+        <div class="kartu-isi">
+          <span class="badge badge-ungu" style="margin-bottom:0.75rem;">Filosofi Apem</span>
+          <h4>Afwan — Pemaafan</h4>
+          <p style="margin-top:0.5rem;font-size:0.9rem;">Kata "apem" berasal dari bahasa Arab <em>afwan</em>, bermakna ampunan. Setiap apem yang dibagikan adalah doa yang dikirimkan.</p>
+        </div>
+      </article>
+
+      <article class="kartu fade-masuk delay-3">
+        <div style="height:200px;background:linear-gradient(135deg,var(--ungu),var(--ungu-muda));display:flex;align-items:center;justify-content:center;font-size:4rem;">🎊</div>
+        <div class="kartu-isi">
+          <span class="badge badge-emas" style="margin-bottom:0.75rem;">Warisan Nasional</span>
+          <h4>Ribuan Peziarah</h4>
+          <p style="margin-top:0.5rem;font-size:0.9rem;">Setiap tahun, puluhan ribu orang dari seluruh Indonesia hadir menjadikan Jatinom sebagai pusat wisata religi Jawa Tengah.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     LAYANAN CEPAT
+═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-masuk">
+      <span class="label">Layanan Warga</span>
+      <h2>Apa yang Kami Sediakan</h2>
+      <div class="divider-emas"></div>
+    </div>
+
+    <div class="info-grid" style="margin-top:3rem;">
+      <div class="info-kartu fade-masuk delay-1">
+        <div class="ikon">📄</div>
+        <h4>Surat Keterangan</h4>
+        <p>Domisili, keterangan tidak mampu, usaha, dan berbagai surat keterangan lainnya.</p>
+        <a href="layanan.html" class="btn btn-ungu" style="margin-top:1rem;font-size:0.8rem;padding:0.5rem 1.2rem;">Selengkapnya →</a>
+      </div>
+      <div class="info-kartu fade-masuk delay-2">
+        <div class="ikon">🪪</div>
+        <h4>Administrasi Kependudukan</h4>
+        <p>Pengantar KTP, KK, akta kelahiran, dan dokumen kependudukan lainnya.</p>
+        <a href="layanan.html" class="btn btn-ungu" style="margin-top:1rem;font-size:0.8rem;padding:0.5rem 1.2rem;">Selengkapnya →</a>
+      </div>
+      <div class="info-kartu fade-masuk delay-3">
+        <div class="ikon">📥</div>
+        <h4>Unduh Formulir</h4>
+        <p>Unduh berbagai formulir layanan langsung dari website — tanpa perlu ke kantor dulu.</p>
+        <a href="layanan.html" class="btn btn-ungu" style="margin-top:1rem;font-size:0.8rem;padding:0.5rem 1.2rem;">Unduh →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     JAM LAYANAN
+═══════════════════════════════════════════════ -->
+<section class="stat-band" style="padding:3rem 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;">
+      <div>
+        <p style="color:var(--emas);font-size:0.75rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.5rem;">Jam Operasional</p>
+        <h3 style="color:var(--krem);font-family:var(--font-display);">Kantor Kelurahan Jatinom</h3>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--krem);">Senin–Kamis</div>
+          <div style="color:var(--emas);font-size:0.85rem;margin-top:0.25rem;">07.30 – 15.30 WIB</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--krem);">Jumat</div>
+          <div style="color:var(--emas);font-size:0.85rem;margin-top:0.25rem;">07.30 – 11.00 WIB</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:rgba(245,230,200,0.4);">Sabtu</div>
+          <div style="color:rgba(201,168,76,0.4);font-size:0.85rem;margin-top:0.25rem;">Libur</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:rgba(245,230,200,0.4);">Minggu</div>
+          <div style="color:rgba(201,168,76,0.4);font-size:0.85rem;margin-top:0.25rem;">Libur</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img src="../asset/img/logo vektor.final.png" alt="Logo Jatinom" />
+        <h3>Kelurahan Jatinom</h3>
+        <p>Jl. Raya Jatinom, Kecamatan Jatinom,<br/>Kabupaten Klaten 57481,<br/>Provinsi Jawa Tengah</p>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="footer-kolom">
+        <h5>Navigasi</h5>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="regulasi.html">Regulasi</a></li>
+        </ul>
+      </div>
+
+      <!-- Profil -->
+      <div class="footer-kolom">
+        <h5>Profil</h5>
+        <ul>
+          <li><a href="profile/struktur-pemerintahan.html">Struktur Pemerintahan</a></li>
+          <li><a href="profile/visi-misi.html">Visi & Misi</a></li>
+          <li><a href="profile/sejarah-jatinom.html">Sejarah Jatinom</a></li>
+          <li><a href="profile/monografi-kependudukan.html">Monografi</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div class="footer-kolom">
+        <h5>Kontak</h5>
+        <ul>
+          <li><a href="#">📞 (0272) XXXXXX</a></li>
+          <li><a href="#">✉ kel.jatinom@klaten.go.id</a></li>
+          <li><a href="#">📍 Lihat di Peta</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bawah">
+      <p>© 2025 Kelurahan Jatinom · Dikembangkan dengan ❤ untuk warga Jatinom</p>
+      <div class="ornamen">✦ ✦ ✦</div>
+      <p>Data berdasarkan registrasi resmi Dukcapil & BPS Klaten</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     FLOATING ACTION BUTTONS
+═══════════════════════════════════════════════ -->
+<div class="fab-group">
+  <button class="fab" id="btn-aduan" style="background:var(--ungu);color:var(--krem);" title="Aduan & Keluhan">
+    💬
+    <span class="fab-tooltip">Aduan & Keluhan</span>
+  </button>
+  <button class="fab" id="btn-penilaian" style="background:var(--emas);color:var(--hitam);" title="Nilai Website Ini">
+    ⭐
+    <span class="fab-tooltip">Nilai Website Ini</span>
+  </button>
+</div>
+
+<!-- Back to Top -->
+<button id="back-top" title="Kembali ke atas">↑</button>
+
+<!-- ═══════════════════════════════════════════════
+     MODAL ADUAN
+═══════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-aduan">
+  <div class="modal-konten">
+    <button class="modal-tutup" data-tutup="modal-aduan">✕</button>
+    <h3 style="margin-bottom:0.5rem;">Aduan & Keluhan</h3>
+    <p style="margin-bottom:2rem;font-size:0.9rem;">Sampaikan masukan, keluhan, atau laporan Anda kepada pihak kelurahan.</p>
+
+    <div class="form-grup">
+      <label>Nama Lengkap</label>
+      <input type="text" placeholder="Masukkan nama Anda" />
+    </div>
+    <div class="form-grup">
+      <label>Nomor Telepon</label>
+      <input type="tel" placeholder="08xx xxxx xxxx" />
+    </div>
+    <div class="form-grup">
+      <label>Jenis Aduan</label>
+      <select>
+        <option>Pilih jenis aduan...</option>
+        <option>Pelayanan Administrasi</option>
+        <option>Infrastruktur & Fasilitas</option>
+        <option>Kebersihan Lingkungan</option>
+        <option>Keamanan & Ketertiban</option>
+        <option>Lainnya</option>
+      </select>
+    </div>
+    <div class="form-grup">
+      <label>Isi Aduan</label>
+      <textarea placeholder="Tuliskan aduan atau keluhan Anda secara jelas..."></textarea>
+    </div>
+    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Aduan</button>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-penilaian">
+  <div class="modal-konten" style="text-align:center;max-width:450px;">
+    <button class="modal-tutup" data-tutup="modal-penilaian">✕</button>
+    <div style="font-size:3rem;margin-bottom:1rem;">⭐</div>
+    <h3 style="margin-bottom:0.5rem;">Bagaimana Website Ini?</h3>
+    <p style="margin-bottom:2rem;font-size:0.9rem;">Penilaian Anda membantu kami untuk terus berkembang melayani warga Jatinom.</p>
+
+    <div class="rating-bintang" id="rating-bintang" style="justify-content:center;margin-bottom:1.5rem;">
+      <span class="bintang" data-nilai="1">★</span>
+      <span class="bintang" data-nilai="2">★</span>
+      <span class="bintang" data-nilai="3">★</span>
+      <span class="bintang" data-nilai="4">★</span>
+      <span class="bintang" data-nilai="5">★</span>
+    </div>
+
+    <div class="form-grup" style="text-align:left;">
+      <label>Komentar (opsional)</label>
+      <textarea placeholder="Ada yang ingin Anda sampaikan?" style="min-height:80px;"></textarea>
+    </div>
+    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Penilaian</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
