@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../../style.css" />
   <link rel="icon" type="image/png" href="../../asset/img/logo vektor.final.png" />
   <style>
+    /* Maps kecil */
     .map-container {
       background: var(--putih);
       border-radius: 20px;
@@ -23,11 +24,14 @@
       margin-bottom: 1rem;
       font-family: var(--font-display);
       color: var(--ungu);
+      font-size: 1.2rem;
     }
     .map-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* Rasio 16:9 */
+      max-width: 500px;
+      margin: 0 auto;
+      padding-bottom: 40%;
       height: 0;
       overflow: hidden;
       border-radius: 16px;
@@ -47,43 +51,175 @@
       color: var(--teks-muted);
       margin-top: 0.75rem;
     }
-    @media (max-width: 768px) {
+
+    /* Diagram batang yang lebih menarik */
+    .chart-container {
+      background: var(--putih);
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+    [data-theme="dark"] .chart-container {
+      background: var(--bg-kedua);
+    }
+    .chart-container h3 {
+      margin-bottom: 1.5rem;
+      font-family: var(--font-display);
+      color: var(--ungu);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .chart-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .chart-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .chart-item span {
+      width: 110px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .bar {
+      flex: 1;
+      background: rgba(91,31,106,0.15);
+      border-radius: 30px;
+      overflow: hidden;
+      height: 36px;
+    }
+    .bar div {
+      background: linear-gradient(90deg, var(--ungu), var(--ungu-muda));
+      color: var(--krem);
+      padding: 0.35rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 40px;
+    }
+
+    /* Statistik Cards */
+    .monografi-stats {
+      display: grid;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    /* Tabel yang rapi */
+    .tabel-wilayah {
+      margin: 2rem 0;
+    }
+    .tabel-wilayah h3 {
+      margin-bottom: 1rem;
+      font-family: var(--font-display);
+      color: var(--ungu);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--putih);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    [data-theme="dark"] table {
+      background: var(--bg-kedua);
+    }
+    th {
+      background: var(--ungu);
+      color: var(--krem);
+      padding: 0.9rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid rgba(91,31,106,0.08);
+      font-size: 0.9rem;
+    }
+    [data-theme="dark"] td {
+      border-bottom-color: rgba(245,230,200,0.08);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .sumber-data {
+      font-size: 0.7rem;
+      text-align: center;
+      color: var(--teks-muted);
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(91,31,106,0.1);
+    }
+
+    /* Responsive */
+    @media (min-width: 640px) {
       .monografi-stats {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-        margin: 1rem 0;
       }
-      .mono-card {
-        padding: 1rem;
+    }
+    @media (min-width: 768px) {
+      .monografi-stats {
+        grid-template-columns: repeat(3, 1fr);
       }
-      .mono-angka {
-        font-size: 1.5rem;
+    }
+    @media (min-width: 1024px) {
+      .monografi-stats {
+        grid-template-columns: repeat(6, 1fr);
       }
-      .mono-label {
-        font-size: 0.7rem;
-      }
-      .chart-container {
-        padding: 1rem;
-        margin: 1rem 0;
-      }
-      .chart-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .map-wrapper {
+        max-width: 100%;
+        padding-bottom: 56.25%;
       }
       .chart-item span {
         width: 100%;
-        font-size: 0.85rem;
       }
       .bar {
         width: 100%;
       }
-      .bar div {
-        padding: 0.25rem 0.75rem;
-        font-size: 0.7rem;
+      th, td {
+        padding: 0.6rem;
+        font-size: 0.8rem;
       }
-      .tabel-wilayah {
-        margin: 1rem 0;
+      .chart-container {
+        padding: 1rem;
+      }
+      .bar div {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .monografi-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
+      .mono-card {
+        padding: 0.8rem;
+      }
+      .mono-angka {
+        font-size: 1.3rem;
+      }
+      .mono-label {
+        font-size: 0.65rem;
       }
       table, thead, tbody, th, td, tr {
         display: block;
@@ -101,9 +237,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.6rem 0.75rem;
+        padding: 0.5rem 0.75rem;
         border-bottom: 1px solid rgba(91,31,106,0.05);
-        font-size: 0.85rem;
       }
       td:last-child {
         border-bottom: none;
@@ -113,52 +248,6 @@
         font-weight: 600;
         width: 40%;
         color: var(--ungu);
-      }
-      .sumber-data {
-        font-size: 0.65rem;
-        margin-top: 1rem;
-      }
-      .map-container {
-        padding: 0.75rem;
-        margin: 1rem 0;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .monografi-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-      .section-header h2 {
-        font-size: 1.5rem;
-      }
-      .section-header p {
-        font-size: 0.8rem;
-      }
-      .divider-emas {
-        width: 40px;
-      }
-      h3 {
-        font-size: 1.2rem;
-      }
-    }
-    
-    /* Tablet (769px - 1024px) */
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .monografi-stats {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .mono-card {
-        padding: 1.2rem;
-      }
-      .chart-item {
-        flex-wrap: wrap;
-      }
-    }
-    
-    /* Desktop besar */
-    @media (min-width: 1200px) {
-      .monografi-stats {
-        grid-template-columns: repeat(6, 1fr);
       }
     }
   </style>
@@ -170,7 +259,7 @@
 <nav id="navbar">
   <div class="container">
     <div class="nav-inner">
-      <a href="../../index.html" class="nav-brand">
+      <a href="../index.html" class="nav-brand">
         <img src="../../asset/img/logo vektor.final.png" alt="Logo Kelurahan Jatinom" />
         <div class="nav-brand-teks">
           <span class="nama">Kelurahan Jatinom</span>
@@ -178,7 +267,7 @@
         </div>
       </a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="../../index.html">Beranda</a></li>
+        <li><a href="../index.html">Beranda</a></li>
         <li class="nav-dropdown">
           <a href="#" class="aktif">Profil</a>
           <ul class="dropdown-menu">
@@ -230,15 +319,14 @@
         <div class="mono-card"><div class="mono-angka">4.171</div><div class="mono-label">Kepadatan (jiwa/km²)</div></div>
       </div>
 
-      <!-- PETA LOKASI -->
+      <!-- PETA LOKASI (DIPERKECIL) -->
       <div class="map-container fade-masuk delay-2">
         <h3>📍 Peta Lokasi Kelurahan Jatinom</h3>
         <div class="map-wrapper">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.123456789012!2d110.5833!3d-7.6167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a2d5c8f4b6a3b%3A0x8c9d4e2f1a7b5c3d!2sJatinom%2C%20Klaten%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.0511870003794!2d110.582252!3d-7.6200729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a2d534b5b2b8b%3A0x4c2e5c2b8f2b8b5d!2sJatinom%2C%20Kec.%20Jatinom%2C%20Kabupaten%20Klaten%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
             allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
+            loading="lazy">
           </iframe>
         </div>
         <div class="map-caption">
@@ -246,23 +334,38 @@
         </div>
       </div>
 
-      <!-- Diagram Sarana Prasarana -->
+      <!-- DIAGRAM SARANA PRASARANA (LEBIH MENARIK) -->
       <div class="chart-container fade-masuk delay-3">
         <h3>📊 Distribusi Sarana & Prasarana</h3>
         <div class="chart-bars">
-          <div class="chart-item"><span>🕌 Masjid</span><div class="bar"><div style="width:70%">14</div></div></div>
-          <div class="chart-item"><span>🕋 Mushola</span><div class="bar"><div style="width:95%">19</div></div></div>
-          <div class="chart-item"><span>🏫 Sekolah</span><div class="bar"><div style="width:50%">10</div></div></div>
-          <div class="chart-item"><span>🏥 Puskesmas</span><div class="bar"><div style="width:5%">1</div></div></div>
-          <div class="chart-item"><span>👶 Posyandu</span><div class="bar"><div style="width:45%">9</div></div></div>
+          <div class="chart-item">
+            <span>🕌 Masjid</span>
+            <div class="bar"><div style="width: 70%;">14 Unit</div></div>
+          </div>
+          <div class="chart-item">
+            <span>🕋 Mushola</span>
+            <div class="bar"><div style="width: 95%;">19 Unit</div></div>
+          </div>
+          <div class="chart-item">
+            <span>🏫 Sekolah</span>
+            <div class="bar"><div style="width: 50%;">10 Unit</div></div>
+          </div>
+          <div class="chart-item">
+            <span>🏥 Puskesmas</span>
+            <div class="bar"><div style="width: 5%;">1 Unit</div></div>
+          </div>
+          <div class="chart-item">
+            <span>👶 Posyandu</span>
+            <div class="bar"><div style="width: 45%;">9 Unit</div></div>
+          </div>
         </div>
       </div>
 
-      <!-- Tabel Data Wilayah -->
+      <!-- TABEL DATA WILAYAH (RAPI) -->
       <div class="tabel-wilayah fade-masuk delay-4">
         <h3>📋 Data Wilayah Kelurahan Jatinom</h3>
         <div style="overflow-x: auto;">
-          <table style="min-width: 300px; width: 100%;">
+          <table>
             <thead>
               <tr><th>Uraian</th><th>Jumlah</th><th>Keterangan</th></tr>
             </thead>
@@ -298,7 +401,7 @@
       </div>
       <div class="footer-kolom">
         <h5>Navigasi</h5>
-        <ul><li><a href="../../index.html">Beranda</a></li><li><a href="../galeri.html">Galeri</a></li><li><a href="../layanan-kegiatan.html">Layanan & Kegiatan</a></li><li><a href="../regulasi.html">Regulasi</a></li></ul>
+        <ul><li><a href="../index.html">Beranda</a></li><li><a href="../galeri.html">Galeri</a></li><li><a href="../layanan-kegiatan.html">Layanan & Kegiatan</a></li><li><a href="../regulasi.html">Regulasi</a></li></ul>
       </div>
       <div class="footer-kolom">
         <h5>Profil</h5>
@@ -319,32 +422,8 @@
 </div>
 <button id="back-top" title="Kembali ke atas">↑</button>
 
-<div class="modal-overlay" id="modal-aduan">
-  <div class="modal-konten">
-    <button class="modal-tutup" data-tutup="modal-aduan">✕</button>
-    <h3 style="margin-bottom:0.5rem;">Aduan & Keluhan</h3>
-    <p style="margin-bottom:2rem;font-size:0.9rem;">Sampaikan masukan, keluhan, atau laporan Anda kepada pihak kelurahan.</p>
-    <div class="form-grup"><label>Nama Lengkap</label><input type="text" placeholder="Masukkan nama Anda" /></div>
-    <div class="form-grup"><label>Nomor Telepon</label><input type="tel" placeholder="08xx xxxx xxxx" /></div>
-    <div class="form-grup"><label>Jenis Aduan</label><select><option>Pilih jenis aduan...</option><option>Pelayanan Administrasi</option><option>Infrastruktur & Fasilitas</option><option>Kebersihan Lingkungan</option><option>Keamanan & Ketertiban</option><option>Lainnya</option></select></div>
-    <div class="form-grup"><label>Isi Aduan</label><textarea placeholder="Tuliskan aduan atau keluhan Anda secara jelas..."></textarea></div>
-    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Aduan</button>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-penilaian">
-  <div class="modal-konten" style="text-align:center;max-width:450px;">
-    <button class="modal-tutup" data-tutup="modal-penilaian">✕</button>
-    <div style="font-size:3rem;margin-bottom:1rem;">⭐</div>
-    <h3 style="margin-bottom:0.5rem;">Bagaimana Website Ini?</h3>
-    <p style="margin-bottom:2rem;font-size:0.9rem;">Penilaian Anda membantu kami untuk terus berkembang melayani warga Jatinom.</p>
-    <div class="rating-bintang" id="rating-bintang" style="justify-content:center;margin-bottom:1.5rem;">
-      <span class="bintang" data-nilai="1">★</span><span class="bintang" data-nilai="2">★</span><span class="bintang" data-nilai="3">★</span><span class="bintang" data-nilai="4">★</span><span class="bintang" data-nilai="5">★</span>
-    </div>
-    <div class="form-grup" style="text-align:left;"><label>Komentar (opsional)</label><textarea placeholder="Ada yang ingin Anda sampaikan?" style="min-height:80px;"></textarea></div>
-    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Penilaian</button>
-  </div>
-</div>
+<div class="modal-overlay" id="modal-aduan">...</div>
+<div class="modal-overlay" id="modal-penilaian">...</div>
 
 <script src="../../script.js"></script>
 </body>
