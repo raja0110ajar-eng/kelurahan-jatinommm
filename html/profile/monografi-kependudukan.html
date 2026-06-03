@@ -2,10 +2,166 @@
 <html lang="id" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+  <meta name="description" content="Monografi Kependudukan Kelurahan Jatinom, Kecamatan Jatinom, Kabupaten Klaten" />
   <title>Monografi Kependudukan - Kelurahan Jatinom</title>
   <link rel="stylesheet" href="../../style.css" />
   <link rel="icon" type="image/png" href="../../asset/img/logo vektor.final.png" />
+  <style>
+    .map-container {
+      background: var(--putih);
+      border-radius: 20px;
+      padding: 1rem;
+      margin: 2rem 0;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(91,31,106,0.1);
+    }
+    [data-theme="dark"] .map-container {
+      background: var(--bg-kedua);
+    }
+    .map-container h3 {
+      margin-bottom: 1rem;
+      font-family: var(--font-display);
+      color: var(--ungu);
+    }
+    .map-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Rasio 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+    .map-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 16px;
+    }
+    .map-caption {
+      font-size: 0.75rem;
+      text-align: center;
+      color: var(--teks-muted);
+      margin-top: 0.75rem;
+    }
+    @media (max-width: 768px) {
+      .monografi-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin: 1rem 0;
+      }
+      .mono-card {
+        padding: 1rem;
+      }
+      .mono-angka {
+        font-size: 1.5rem;
+      }
+      .mono-label {
+        font-size: 0.7rem;
+      }
+      .chart-container {
+        padding: 1rem;
+        margin: 1rem 0;
+      }
+      .chart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .chart-item span {
+        width: 100%;
+        font-size: 0.85rem;
+      }
+      .bar {
+        width: 100%;
+      }
+      .bar div {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.7rem;
+      }
+      .tabel-wilayah {
+        margin: 1rem 0;
+      }
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead {
+        display: none;
+      }
+      tr {
+        margin-bottom: 0.75rem;
+        border: 1px solid rgba(91,31,106,0.1);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.6rem 0.75rem;
+        border-bottom: 1px solid rgba(91,31,106,0.05);
+        font-size: 0.85rem;
+      }
+      td:last-child {
+        border-bottom: none;
+      }
+      td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        width: 40%;
+        color: var(--ungu);
+      }
+      .sumber-data {
+        font-size: 0.65rem;
+        margin-top: 1rem;
+      }
+      .map-container {
+        padding: 0.75rem;
+        margin: 1rem 0;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .monografi-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
+      .section-header p {
+        font-size: 0.8rem;
+      }
+      .divider-emas {
+        width: 40px;
+      }
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+    
+    /* Tablet (769px - 1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .monografi-stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .mono-card {
+        padding: 1.2rem;
+      }
+      .chart-item {
+        flex-wrap: wrap;
+      }
+    }
+    
+    /* Desktop besar */
+    @media (min-width: 1200px) {
+      .monografi-stats {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -22,7 +178,7 @@
         </div>
       </a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Beranda</a></li>
         <li class="nav-dropdown">
           <a href="#" class="aktif">Profil</a>
           <ul class="dropdown-menu">
@@ -44,22 +200,6 @@
       </div>
     </div>
   </div>
-  <style>
-    [data-theme="light"] #navbar { background: #3D1152; }
-    [data-theme="light"] .nav-menu a { color: #F5E6C8; }
-    [data-theme="light"] .nav-menu a:hover, [data-theme="light"] .nav-menu a.aktif { color: #C9A84C; background: rgba(245,230,200,0.15); }
-    [data-theme="light"] .nav-brand-teks .nama { color: #F5E6C8; }
-    [data-theme="light"] .nav-brand-teks .sub { color: #E8D0A0; }
-    [data-theme="dark"] #navbar { background: #F5E6C8; }
-    [data-theme="dark"] .nav-menu a { color: #3D1152; }
-    [data-theme="dark"] .nav-menu a:hover, [data-theme="dark"] .nav-menu a.aktif { color: #5B1F6A; background: rgba(91,31,106,0.1); }
-    [data-theme="dark"] .nav-brand-teks .nama { color: #3D1152; }
-    [data-theme="dark"] .nav-brand-teks .sub { color: #5B1F6A; }
-    [data-theme="dark"] #btn-cari, [data-theme="dark"] #btn-tema, [data-theme="dark"] #btn-hamburger { background: rgba(91,31,106,0.1); color: #3D1152; }
-    [data-theme="dark"] .dropdown-menu { background: #F5E6C8; }
-    [data-theme="dark"] .dropdown-menu a { color: #3D1152; }
-    [data-theme="dark"] .dropdown-menu a:hover { background: rgba(91,31,106,0.08); color: #5B1F6A; }
-  </style>
 </nav>
 
 <div id="search-overlay">
@@ -80,6 +220,7 @@
         <p>Data terbaru berdasarkan registrasi kependudukan dan publikasi resmi Pemerintah Kabupaten Klaten</p>
       </div>
 
+      <!-- Statistik Cards -->
       <div class="monografi-stats fade-masuk delay-1">
         <div class="mono-card"><div class="mono-angka">6.422</div><div class="mono-label">Total Penduduk</div></div>
         <div class="mono-card"><div class="mono-angka">2.148</div><div class="mono-label">Kepala Keluarga</div></div>
@@ -89,38 +230,60 @@
         <div class="mono-card"><div class="mono-angka">4.171</div><div class="mono-label">Kepadatan (jiwa/km²)</div></div>
       </div>
 
-      <div class="chart-container fade-masuk delay-2">
-        <h3>Distribusi Sarana & Prasarana</h3>
-        <div class="chart-bars">
-          <div class="chart-item"><span>Masjid</span><div class="bar"><div style="width:70%">14</div></div></div>
-          <div class="chart-item"><span>Mushola</span><div class="bar"><div style="width:95%">19</div></div></div>
-          <div class="chart-item"><span>Sekolah</span><div class="bar"><div style="width:50%">10</div></div></div>
-          <div class="chart-item"><span>Puskesmas</span><div class="bar"><div style="width:5%">1</div></div></div>
-          <div class="chart-item"><span>Posyandu</span><div class="bar"><div style="width:45%">9</div></div></div>
+      <!-- PETA LOKASI -->
+      <div class="map-container fade-masuk delay-2">
+        <h3>📍 Peta Lokasi Kelurahan Jatinom</h3>
+        <div class="map-wrapper">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.123456789012!2d110.5833!3d-7.6167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a2d5c8f4b6a3b%3A0x8c9d4e2f1a7b5c3d!2sJatinom%2C%20Klaten%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="map-caption">
+          📌 Jl. Raya Jatinom, Kecamatan Jatinom, Kabupaten Klaten, Jawa Tengah 57481
         </div>
       </div>
 
-      <div class="tabel-wilayah fade-masuk delay-3">
-        <h3>Data Wilayah Kelurahan Jatinom</h3>
-        <table>
-          <thead><tr><th>Uraian</th><th>Jumlah</th><th>Keterangan</th></tr></thead>
-          <tbody>
-            <tr><td>Luas Wilayah</td><td>1,54 km²</td><td>± 154 Hektar</td></tr>
-            <tr><td>Jumlah Penduduk</td><td>6.422 jiwa</td><td>Laki-laki: 3.195 · Perempuan: 3.227</td></tr>
-            <tr><td>Kepadatan Penduduk</td><td>4.171 jiwa/km²</td><td>-</td></tr>
-            <tr><td>Jumlah KK</td><td>2.148 KK</td><td>-</td></tr>
-            <tr><td>RW</td><td>9 RW</td><td>-</td></tr>
-            <tr><td>RT</td><td>33 RT</td><td>-</td></tr>
-            <tr><td>Masjid</td><td>14</td><td>-</td></tr>
-            <tr><td>Mushola</td><td>19</td><td>-</td></tr>
-            <tr><td>Sekolah (TK - SMA)</td><td>10</td><td>Negeri + Swasta</td></tr>
-            <tr><td>Puskesmas</td><td>1</td><td>Rawat inap</td></tr>
-            <tr><td>Posyandu</td><td>9</td><td>Aktif</td></tr>
-          </tbody>
-        </table>
+      <!-- Diagram Sarana Prasarana -->
+      <div class="chart-container fade-masuk delay-3">
+        <h3>📊 Distribusi Sarana & Prasarana</h3>
+        <div class="chart-bars">
+          <div class="chart-item"><span>🕌 Masjid</span><div class="bar"><div style="width:70%">14</div></div></div>
+          <div class="chart-item"><span>🕋 Mushola</span><div class="bar"><div style="width:95%">19</div></div></div>
+          <div class="chart-item"><span>🏫 Sekolah</span><div class="bar"><div style="width:50%">10</div></div></div>
+          <div class="chart-item"><span>🏥 Puskesmas</span><div class="bar"><div style="width:5%">1</div></div></div>
+          <div class="chart-item"><span>👶 Posyandu</span><div class="bar"><div style="width:45%">9</div></div></div>
+        </div>
       </div>
 
-      <p class="sumber-data fade-masuk delay-4">※ Data berdasarkan registrasi resmi Dukcapil & BPS Kabupaten Klaten, diperbarui secara berkala.</p>
+      <!-- Tabel Data Wilayah -->
+      <div class="tabel-wilayah fade-masuk delay-4">
+        <h3>📋 Data Wilayah Kelurahan Jatinom</h3>
+        <div style="overflow-x: auto;">
+          <table style="min-width: 300px; width: 100%;">
+            <thead>
+              <tr><th>Uraian</th><th>Jumlah</th><th>Keterangan</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Uraian">Luas Wilayah</td><td data-label="Jumlah">1,54 km²</td><td data-label="Keterangan">± 154 Hektar</td></tr>
+              <tr><td data-label="Uraian">Jumlah Penduduk</td><td data-label="Jumlah">6.422 jiwa</td><td data-label="Keterangan">Laki: 3.195 · Perempuan: 3.227</td></tr>
+              <tr><td data-label="Uraian">Kepadatan Penduduk</td><td data-label="Jumlah">4.171 jiwa/km²</td><td data-label="Keterangan">-</td></tr>
+              <tr><td data-label="Uraian">Jumlah KK</td><td data-label="Jumlah">2.148 KK</td><td data-label="Keterangan">-</td></tr>
+              <tr><td data-label="Uraian">RW</td><td data-label="Jumlah">9 RW</td><td data-label="Keterangan">-</td></tr>
+              <tr><td data-label="Uraian">RT</td><td data-label="Jumlah">33 RT</td><td data-label="Keterangan">-</td></tr>
+              <tr><td data-label="Uraian">Masjid</td><td data-label="Jumlah">14</td><td data-label="Keterangan">Tersebar di seluruh wilayah</td></tr>
+              <tr><td data-label="Uraian">Mushola</td><td data-label="Jumlah">19</td><td data-label="Keterangan">Tersebar di seluruh wilayah</td></tr>
+              <tr><td data-label="Uraian">Sekolah (TK - SMA)</td><td data-label="Jumlah">10</td><td data-label="Keterangan">Negeri + Swasta</td></tr>
+              <tr><td data-label="Uraian">Puskesmas</td><td data-label="Jumlah">1</td><td data-label="Keterangan">Rawat inap</td></tr>
+              <tr><td data-label="Uraian">Posyandu</td><td data-label="Jumlah">9</td><td data-label="Keterangan">Aktif</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="sumber-data fade-masuk delay-5">※ Data berdasarkan registrasi resmi Dukcapil & BPS Kabupaten Klaten, diperbarui secara berkala.</p>
     </div>
   </section>
 </main>
@@ -135,7 +298,7 @@
       </div>
       <div class="footer-kolom">
         <h5>Navigasi</h5>
-        <ul><li><a href="../index.html">Beranda</a></li><li><a href="../galeri.html">Galeri</a></li><li><a href="../layanan-kegiatan.html">Layanan & Kegiatan</a></li><li><a href="../regulasi.html">Regulasi</a></li></ul>
+        <ul><li><a href="../../index.html">Beranda</a></li><li><a href="../galeri.html">Galeri</a></li><li><a href="../layanan-kegiatan.html">Layanan & Kegiatan</a></li><li><a href="../regulasi.html">Regulasi</a></li></ul>
       </div>
       <div class="footer-kolom">
         <h5>Profil</h5>
@@ -151,31 +314,38 @@
 </footer>
 
 <div class="fab-group">
-  <button class="fab" id="btn-aduan">💬<span class="fab-tooltip">Aduan & Keluhan</span></button>
-  <button class="fab" id="btn-penilaian">⭐<span class="fab-tooltip">Nilai Website Ini</span></button>
+  <button class="fab" id="btn-aduan" style="background:var(--ungu);color:var(--krem);" title="Aduan & Keluhan">💬<span class="fab-tooltip">Aduan & Keluhan</span></button>
+  <button class="fab" id="btn-penilaian" style="background:var(--emas);color:var(--hitam);" title="Nilai Website Ini">⭐<span class="fab-tooltip">Nilai Website Ini</span></button>
 </div>
 <button id="back-top" title="Kembali ke atas">↑</button>
 
-<div class="modal-overlay" id="modal-aduan"><div class="modal-konten"><button class="modal-tutup" data-tutup="modal-aduan">✕</button><h3>Aduan & Keluhan</h3><div class="form-grup"><label>Nama</label><input type="text" /></div><div class="form-grup"><label>Isi Aduan</label><textarea></textarea></div><button class="btn btn-primer">Kirim</button></div></div>
-<div class="modal-overlay" id="modal-penilaian"><div class="modal-konten"><button class="modal-tutup" data-tutup="modal-penilaian">✕</button><h3>Penilaian Website</h3><div class="rating-bintang" id="rating-bintang"><span class="bintang" data-nilai="1">★</span><span class="bintang" data-nilai="2">★</span><span class="bintang" data-nilai="3">★</span><span class="bintang" data-nilai="4">★</span><span class="bintang" data-nilai="5">★</span></div><button class="btn btn-primer">Kirim</button></div></div>
+<div class="modal-overlay" id="modal-aduan">
+  <div class="modal-konten">
+    <button class="modal-tutup" data-tutup="modal-aduan">✕</button>
+    <h3 style="margin-bottom:0.5rem;">Aduan & Keluhan</h3>
+    <p style="margin-bottom:2rem;font-size:0.9rem;">Sampaikan masukan, keluhan, atau laporan Anda kepada pihak kelurahan.</p>
+    <div class="form-grup"><label>Nama Lengkap</label><input type="text" placeholder="Masukkan nama Anda" /></div>
+    <div class="form-grup"><label>Nomor Telepon</label><input type="tel" placeholder="08xx xxxx xxxx" /></div>
+    <div class="form-grup"><label>Jenis Aduan</label><select><option>Pilih jenis aduan...</option><option>Pelayanan Administrasi</option><option>Infrastruktur & Fasilitas</option><option>Kebersihan Lingkungan</option><option>Keamanan & Ketertiban</option><option>Lainnya</option></select></div>
+    <div class="form-grup"><label>Isi Aduan</label><textarea placeholder="Tuliskan aduan atau keluhan Anda secara jelas..."></textarea></div>
+    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Aduan</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-penilaian">
+  <div class="modal-konten" style="text-align:center;max-width:450px;">
+    <button class="modal-tutup" data-tutup="modal-penilaian">✕</button>
+    <div style="font-size:3rem;margin-bottom:1rem;">⭐</div>
+    <h3 style="margin-bottom:0.5rem;">Bagaimana Website Ini?</h3>
+    <p style="margin-bottom:2rem;font-size:0.9rem;">Penilaian Anda membantu kami untuk terus berkembang melayani warga Jatinom.</p>
+    <div class="rating-bintang" id="rating-bintang" style="justify-content:center;margin-bottom:1.5rem;">
+      <span class="bintang" data-nilai="1">★</span><span class="bintang" data-nilai="2">★</span><span class="bintang" data-nilai="3">★</span><span class="bintang" data-nilai="4">★</span><span class="bintang" data-nilai="5">★</span>
+    </div>
+    <div class="form-grup" style="text-align:left;"><label>Komentar (opsional)</label><textarea placeholder="Ada yang ingin Anda sampaikan?" style="min-height:80px;"></textarea></div>
+    <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Penilaian</button>
+  </div>
+</div>
 
 <script src="../../script.js"></script>
-
-<style>
-.monografi-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0; }
-.mono-card { background: linear-gradient(135deg, var(--ungu), var(--ungu-tua)); border-radius: 16px; padding: 1.5rem; text-align: center; border: 1px solid var(--emas); }
-.mono-angka { font-family: var(--font-display); font-size: 2rem; font-weight: 900; color: var(--emas); }
-.mono-label { font-size: 0.8rem; color: var(--krem); margin-top: 0.5rem; }
-.chart-container { background: var(--putih); border-radius: 20px; padding: 2rem; margin: 2rem 0; }
-[data-theme="dark"] .chart-container { background: var(--bg-kedua); }
-.chart-bars { margin-top: 1.5rem; }
-.chart-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
-.chart-item span { width: 100px; font-weight: 600; }
-.bar { flex: 1; background: rgba(91,31,106,0.2); border-radius: 20px; overflow: hidden; }
-.bar div { background: var(--ungu); color: var(--krem); padding: 0.35rem 1rem; border-radius: 20px; font-size: 0.8rem; text-align: right; }
-.tabel-wilayah { margin: 2rem 0; }
-.sumber-data { font-size: 0.75rem; text-align: center; color: var(--teks-muted); margin-top: 2rem; }
-@media (max-width: 768px) { .monografi-stats { grid-template-columns: repeat(2,1fr); } .chart-item span { width: 80px; font-size: 0.8rem; } }
-</style>
 </body>
 </html>
