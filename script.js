@@ -320,3 +320,20 @@ document.querySelectorAll('.btn-primer').forEach(btn => {
 document.querySelectorAll('.modal-konten .btn-primer').forEach(btn => {
   btn.dataset.teks = btn.textContent;
 });
+// Memaksa video hero dan video sambutan untuk play otomatis di laptop yang bandel
+window.addEventListener('DOMContentLoaded', () => {
+  const heroVideo = document.querySelector('.hero-video');
+  const sambutanVideo = document.getElementById('videoAnimasiSambutan');
+
+  // Jika video hero ditemukan, paksa putar
+  if (heroVideo) {
+    heroVideo.muted = true; // Wajib disetel mute lewat sistem kode
+    heroVideo.play().catch(error => console.log("Autoplay hero diblokir browser:", error));
+  }
+
+  // Jika video animasi sambutan ditemukan, paksa putar
+  if (sambutanVideo) {
+    sambutanVideo.muted = true;
+    sambutanVideo.play().catch(error => console.log("Autoplay sambutan diblokir browser:", error));
+  }
+});
