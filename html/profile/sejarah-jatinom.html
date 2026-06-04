@@ -388,7 +388,108 @@
     <button class="btn btn-primer" style="width:100%;justify-content:center;">Kirim Penilaian</button>
   </div>
 </div>
+<style>
+  /* ── RESPONSIF ──────────────────────────────────────────── */
 
+/* Tablet landscape 1024px */
+@media (max-width: 1024px) {
+  .hero-konten { gap: 2.5rem; padding-top: 7rem; }
+  .sambutan-frame { max-width: 400px; }
+  .tentang-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 .kartu:last-child { grid-column: span 2; max-width: 420px; margin: 0 auto; width: 100%; }
+  .tradisi-grid .kartu:last-child { grid-column: span 2; max-width: 420px; }
+  .jam-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .jam-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Tablet portrait 768px */
+@media (max-width: 768px) {
+  :root { --space-lg: 2.5rem; }
+  .hero-konten { grid-template-columns: 1fr; padding-top: 6rem; padding-bottom: 5rem; text-align: center; }
+  .hero-teks .label-atas { justify-content: center; }
+  .hero-teks .deskripsi { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .sambutan-wrapper { display: none; }
+  .ornamen-jati { width: 300px; height: 300px; }
+  .nav-menu { display: none; }
+  #btn-hamburger { display: flex; }
+  .nav-menu.aktif { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--ungu-tua); z-index: 999; align-items: center; justify-content: center; gap: 0.75rem; padding: 2rem; }
+  .nav-menu.aktif > li > a { font-size: 1.3rem; padding: 0.75rem 1.5rem; }
+  .nav-dropdown > a::after { display: none; }
+  .dropdown-menu { display: block; position: static; background: transparent; box-shadow: none; border: none; text-align: center; }
+  .dropdown-menu a { font-size: 0.95rem; color: rgba(245,230,200,0.65); padding: 0.4rem 1rem; }
+  .tentang-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .section-header--kiri { text-align: center; }
+  .section-header--kiri .divider-emas { margin: 1rem auto; }
+  .tentang-mini-grid { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-3 .kartu:last-child { grid-column: span 1; max-width: 100%; }
+  .tradisi-grid .kartu:last-child { grid-column: span 1; max-width: 100%; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-item { border-right: none; border-bottom: 1px solid rgba(245,230,200,0.1); padding: 1.5rem 1rem; }
+  .jam-band .jam-inner { grid-template-columns: 1fr; }
+  .jam-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-brand { grid-column: span 2; }
+  .modal-konten { padding: 2rem; }
+  .modal-konten--center { max-width: 100%; }
+  .fab-group { bottom: 1rem; right: 1rem; }
+  .fab-tooltip { display: none; }
+  .timeline::before { left: 20px; transform: none; }
+  .timeline-item { grid-template-columns: 44px 1fr; gap: 0; }
+  .timeline-item:nth-child(odd) .timeline-konten,
+  .timeline-item:nth-child(even) .timeline-konten { grid-column: 2; text-align: left; }
+  .timeline-item:nth-child(odd) .timeline-kosong,
+  .timeline-item:nth-child(even) .timeline-kosong { display: none; }
+  .timeline-titik { grid-column: 1; grid-row: 1; }
+}
+
+/* Mobile 480px */
+@media (max-width: 480px) {
+  :root { --space-lg: 2rem; }
+  .hero-teks h1 { font-size: 2.2rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .tentang-mini-grid { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .jam-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
+  .galeri-grid { grid-template-columns: 1fr; }
+  .flyer-grid { grid-template-columns: 1fr 1fr; }
+  .struktur-level { flex-direction: column; align-items: center; gap: 1rem; }
+  .struktur-garis-h::before { display: none; }
+  .ticker-item { font-size: 0.75rem; padding: 0 1.5rem; }
+  .modal-konten { padding: 1.5rem; border-radius: var(--radius-md); }
+  .rating-bintang { font-size: 1.7rem; }
+}
+
+/* Mobile kecil 360px */
+@media (max-width: 360px) {
+  .hero-teks h1 { font-size: 1.9rem; }
+  .nav-brand-teks .nama { font-size: 0.82rem; }
+  .nav-brand-teks .sub { display: none; }
+  .stat-angka { font-size: 2rem; }
+  .btn { padding: 0.65rem 1.2rem; font-size: 0.8rem; }
+  .flyer-grid { grid-template-columns: 1fr; }
+}
+
+/* Touch device */
+@media (hover: none) {
+  .kartu:hover { transform: none; }
+  .info-kartu:hover { transform: none; }
+  .btn:hover { transform: none; }
+  .fab:hover { transform: scale(1.05); }
+}
+
+/* Landscape HP */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero { min-height: auto; }
+  .hero-konten { padding-top: 5rem; padding-bottom: 4rem; }
+  .page-hero { padding: 5rem 0 3rem; }
+}
+  </style>
 <script src="../../script.js"></script>
 </body>
 </html>
