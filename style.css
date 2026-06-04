@@ -262,6 +262,7 @@ body {
   color: var(--teks-utama);
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100%;
   transition: background-color var(--trans-med), color var(--trans-med);
 }
 
