@@ -220,42 +220,44 @@ const seekbar = document.getElementById('seekbar');
 const speedControl = document.getElementById('speedControl');
 const btnReplay = document.getElementById('btnReplay');
 
-// Play / Pause
-btnPlayPause.addEventListener('click', () => {
-  if (video.paused) {
-    video.muted = true;
+// Hanya jalankan kalau elemen ada di halaman ini
+if (video && btnPlayPause && seekbar && speedControl && btnReplay) {
+
+   video.muted = false;
+  video.volume = 1;
+   
+  btnPlayPause.addEventListener('click', () => {
+    if (video.paused) {
+      video.muted = false;
+      video.play();
+      btnPlayPause.textContent = '⏸ Pause';
+    } else {
+      video.pause();
+      btnPlayPause.textContent = '▶ Play';
+    }
+  });
+
+  video.addEventListener('timeupdate', () => {
+    seekbar.max = video.duration;
+    seekbar.value = video.currentTime;
+  });
+
+  seekbar.addEventListener('input', () => {
+    video.currentTime = seekbar.value;
+  });
+
+  speedControl.addEventListener('change', () => {
+    video.playbackRate = parseFloat(speedControl.value);
+  });
+
+  btnReplay.addEventListener('click', () => {
+    video.currentTime = 0;
+    video.muted = false;
     video.play();
     btnPlayPause.textContent = '⏸ Pause';
-   sessionStorage.setItem("animasiSambutanDiputar", "true");
-  } else {
-    video.pause();
-    btnPlayPause.textContent = '▶ Play';
-  }
-});
+  });
 
-// Seekbar update saat video berjalan
-video.addEventListener('timeupdate', () => {
-  seekbar.max = video.duration;
-  seekbar.value = video.currentTime;
-});
-
-// Seekbar drag
-seekbar.addEventListener('input', () => {
-  video.currentTime = seekbar.value;
-});
-
-// Kecepatan
-speedControl.addEventListener('change', () => {
-  video.playbackRate = parseFloat(speedControl.value);
-});
-
-// Putar Ulang
-btnReplay.addEventListener('click', () => {   
-   video.muted = true;
-  video.currentTime = 0;
-  video.play();
-  btnPlayPause.textContent = '⏸ Pause';
-});
+}
 
 // ── RATING BINTANG ───────────────────────────────────────────
 const ratingWrapper = document.getElementById('rating-bintang');
