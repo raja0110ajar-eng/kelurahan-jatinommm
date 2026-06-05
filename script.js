@@ -213,52 +213,62 @@ document.addEventListener('keydown', (e) => {
     });
   }
 });
-//Animasi
-const video = document.getElementById('videoAnimasiSambutan');
-const btnPlayPause = document.getElementById('btnPlayPause');
-const seekbar = document.getElementById('seekbar');
-const speedControl = document.getElementById('speedControl');
-const btnReplay = document.getElementById('btnReplay');
+window.addEventListener('DOMContentLoaded', () => {
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.play().catch(e => console.log("Hero autoplay diblokir:", e));
+  }
 
-// Hanya jalankan kalau elemen ada di halaman ini
-if (video && btnPlayPause && seekbar && speedControl && btnReplay) {
+  const video = document.getElementById('videoAnimasiSambutan');
+  const btnPlayPause = document.getElementById('btnPlayPause');
+  const seekbar = document.getElementById('seekbar');
+  const speedControl = document.getElementById('speedControl');
+  const btnReplay = document.getElementById('btnReplay');
 
-   video.muted = false;
-  video.volume = 1;
-   
-  btnPlayPause.addEventListener('click', () => {
-    if (video.paused) {
+  if (video && btnPlayPause && seekbar && speedControl && btnReplay) {
+    
+    // Autoplay muted dulu
+    video.muted = true;
+    video.play().catch(e => console.log("Sambutan autoplay diblokir:", e));
+
+    video.addEventListener('loadedmetadata', () => {
+      seekbar.max = video.duration;
+    });
+
+    btnPlayPause.addEventListener('click', () => {
+      if (video.paused) {
+        video.muted = false; // unmute baru saat user klik
+        video.volume = 1;
+        video.play();
+        btnPlayPause.textContent = '⏸ Pause';
+      } else {
+        video.pause();
+        btnPlayPause.textContent = '▶ Play';
+      }
+    });
+
+    video.addEventListener('timeupdate', () => {
+      seekbar.value = video.currentTime;
+    });
+
+    seekbar.addEventListener('input', () => {
+      video.currentTime = seekbar.value;
+    });
+
+    speedControl.addEventListener('change', () => {
+      video.playbackRate = parseFloat(speedControl.value);
+    });
+
+    btnReplay.addEventListener('click', () => {
+      video.currentTime = 0;
       video.muted = false;
+      video.volume = 1;
       video.play();
       btnPlayPause.textContent = '⏸ Pause';
-    } else {
-      video.pause();
-      btnPlayPause.textContent = '▶ Play';
-    }
-  });
-
-  video.addEventListener('timeupdate', () => {
-    seekbar.max = video.duration;
-    seekbar.value = video.currentTime;
-  });
-
-  seekbar.addEventListener('input', () => {
-    video.currentTime = seekbar.value;
-  });
-
-  speedControl.addEventListener('change', () => {
-    video.playbackRate = parseFloat(speedControl.value);
-  });
-
-  btnReplay.addEventListener('click', () => {
-    video.currentTime = 0;
-    video.muted = false;
-    video.play();
-    btnPlayPause.textContent = '⏸ Pause';
-  });
-
-}
-
+    });
+  }
+});
 // ── RATING BINTANG ───────────────────────────────────────────
 const ratingWrapper = document.getElementById('rating-bintang');
 if (ratingWrapper) {
@@ -314,44 +324,26 @@ document.querySelectorAll('.fade-masuk').forEach(el => observer.observe(el));
 
 // ── KIRIM FORM (UI only — statis) ────────────────────────────
 document.querySelectorAll('.btn-primer').forEach(btn => {
-  if (btn.closest('.modal-konten')) {
-    btn.addEventListener('click', () => {
-      const modal = btn.closest('.modal-overlay');
-      if (!modal) return;
+  if (!btn.closest('.modal-konten')) return;
 
-      // Reset & feedback
-      btn.textContent = '✓ Terkirim!';
-      btn.style.background = '#2ECC71';
-      btn.style.color = '#fff';
+  const modal = btn.closest('.modal-overlay');
+  if (!modal) return;
 
-      setTimeout(() => {
-        btn.textContent = btn.dataset.teks || 'Kirim';
-        btn.style.background = '';
-        btn.style.color = '';
-        tutupModal(modal.id);
-      }, 2000);
-    });
-  }
+  btn.addEventListener('click', () => {
+    btn.textContent = '✓ Terkirim!';
+    btn.style.background = '#2ECC71';
+    btn.style.color = '#fff';
+
+    setTimeout(() => {
+      btn.textContent = btn.dataset.teks || 'Kirim';
+      btn.style.background = '';
+      btn.style.color = '';
+      tutupModal(modal.id);
+    }, 2000);
+  });
 });
 
 // Simpan teks asli tombol
 document.querySelectorAll('.modal-konten .btn-primer').forEach(btn => {
   btn.dataset.teks = btn.textContent;
-});
-// Memaksa video hero dan video sambutan untuk play otomatis di laptop yang bandel
-window.addEventListener('DOMContentLoaded', () => {
-  const heroVideo = document.querySelector('.hero-video');
-  const sambutanVideo = document.getElementById('videoAnimasiSambutan');
-
-  // Jika video hero ditemukan, paksa putar
-  if (heroVideo) {
-    heroVideo.muted = true; // Wajib disetel mute lewat sistem kode
-    heroVideo.play().catch(error => console.log("Autoplay hero diblokir browser:", error));
-  }
-
-  // Jika video animasi sambutan ditemukan, paksa putar
-  if (sambutanVideo) {
-    sambutanVideo.muted = true;
-    sambutanVideo.play().catch(error => console.log("Autoplay sambutan diblokir browser:", error));
-  }
 });
