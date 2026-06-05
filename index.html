@@ -122,26 +122,28 @@
         </div>
       </div>
 
-<video id="videoAnimasiSambutan" class="sambutan-sistem-video" playsinline>
-  <source src="asset/video/animation/Animasihome (1).mp4" type="video/mp4" />
-</video>
+<div class="hero-visual">
+        <div class="sambutan-sistem-wrapper">
+          <video id="videoAnimasiSambutan" class="sambutan-sistem-video" playsinline>
+            <source src="asset/video/animation/Animasihome (1).mp4" type="video/mp4" />
+          </video>
+          <div class="sambutan-sistem-controls">
+            <button id="btnPlayPause">▶ Play</button>
+            <input type="range" id="seekbar" value="0" min="0" max="0" step="0.1" />
+            <select id="speedControl">
+              <option value="0.5">0.5x</option>
+              <option value="1" selected>1x</option>
+              <option value="1.5">1.5x</option>
+              <option value="2">2x</option>
+            </select>
+            <button id="btnReplay">⟳ Ulang</button>
+          </div>
+        </div>
+      </div>
 
-<div class="sambutan-sistem-controls">
-  <button id="btnPlayPause">▶ Play</button>
-  <input type="range" id="seekbar" value="0" min="0" step="0.1" />
-  <select id="speedControl">
-    <option value="0.5">0.5x</option>
-    <option value="1" selected>1x</option>
-    <option value="1.5">1.5x</option>
-    <option value="2">2x</option>
-  </select>
-  <button id="btnReplay">⟳ Ulang</button>
-</div>
-    </div>
-  </div>
-    </div>
-  </div>
-
+    </div><!-- akhir hero-konten -->
+  </div><!-- akhir container -->
+  
   <!-- Teks berjalan -->
   <div class="ticker-wrapper">
     <div class="ticker-inner">
