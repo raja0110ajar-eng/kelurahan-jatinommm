@@ -164,9 +164,7 @@
         <div class="ikon">📄</div>
         <h4>Surat Keterangan</h4>
         <p>Domisili, tidak mampu, usaha, dan berbagai surat keterangan lainnya.</p>
-         <button class="download-btn" onclick="const a = document.createElement('a'); a.href='../asset/flyer/Dokumen Keterangan.pdf'; a.download=''; a.click(); event.stopPropagation();">
-    Unduh Formulir ↓
-</button>
+         <button class="download-btn" onclick="const a = document.createElement('a'); a.href='../asset/flyer/Dokumen Keterangan.pdf'; a.download=''; a.click(); event.preventDefault(); event.stopPropagation(); return false;">Unduh Dokumen ↓</button>
       </div>
       <div class="info-kartu">
         <div class="ikon">🪪</div>
