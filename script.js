@@ -213,7 +213,7 @@ document.addEventListener('keydown', (e) => {
     });
   }
 });
-
+//Animasi
 const video = document.getElementById('videoAnimasiSambutan');
 const btnPlayPause = document.getElementById('btnPlayPause');
 const seekbar = document.getElementById('seekbar');
@@ -223,7 +223,7 @@ const btnReplay = document.getElementById('btnReplay');
 // Play / Pause
 btnPlayPause.addEventListener('click', () => {
   if (video.paused) {
-    video.muted = false;
+    video.muted = true;
     video.play();
     btnPlayPause.textContent = '⏸ Pause';
   } else {
@@ -250,7 +250,7 @@ speedControl.addEventListener('change', () => {
 
 // Putar Ulang
 btnReplay.addEventListener('click', () => {   
-   video.muted = false;
+   video.muted = true;
   video.currentTime = 0;
   video.play();
   btnPlayPause.textContent = '⏸ Pause';
