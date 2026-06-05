@@ -226,6 +226,7 @@ btnPlayPause.addEventListener('click', () => {
     video.muted = true;
     video.play();
     btnPlayPause.textContent = '⏸ Pause';
+   sessionStorage.setItem("animasiSambutanDiputar", "true");
   } else {
     video.pause();
     btnPlayPause.textContent = '▶ Play';
