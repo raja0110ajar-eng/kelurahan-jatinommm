@@ -223,6 +223,7 @@ const btnReplay = document.getElementById('btnReplay');
 // Play / Pause
 btnPlayPause.addEventListener('click', () => {
   if (video.paused) {
+    video.muted = false;
     video.play();
     btnPlayPause.textContent = '⏸ Pause';
   } else {
@@ -248,7 +249,8 @@ speedControl.addEventListener('change', () => {
 });
 
 // Putar Ulang
-btnReplay.addEventListener('click', () => {
+btnReplay.addEventListener('click', () => {   
+   video.muted = false;
   video.currentTime = 0;
   video.play();
   btnPlayPause.textContent = '⏸ Pause';
