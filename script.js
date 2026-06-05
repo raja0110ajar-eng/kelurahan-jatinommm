@@ -214,32 +214,45 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ── ANIMASI SAMBUTAN SISTEM (AUTOPLAY SEKALI, BISA REPLAY) ──
-const videoAnimasi = document.getElementById('videoAnimasiSambutan');
-const replayAnimasi = document.getElementById('replayAnimasiSambutan');
+const video = document.getElementById('videoAnimasiSambutan');
+const btnPlayPause = document.getElementById('btnPlayPause');
+const seekbar = document.getElementById('seekbar');
+const speedControl = document.getElementById('speedControl');
+const btnReplay = document.getElementById('btnReplay');
 
-if (videoAnimasi) {
-  // Cek apakah sudah diputar di sesi ini
-  const sudahDiputarSesi = sessionStorage.getItem('animasiSambutanDiputar');
-  
-  if (!sudahDiputarSesi) {
-    // Autoplay dengan suara (tidak muted)
-    videoAnimasi.muted = false;
-    videoAnimasi.play().catch(e => {
-      console.log('Autoplay animasi sambutan diblokir browser:', e);
-    });
-    sessionStorage.setItem('animasiSambutanDiputar', 'true');
+// Play / Pause
+btnPlayPause.addEventListener('click', () => {
+  if (video.paused) {
+    video.play();
+    btnPlayPause.textContent = '⏸ Pause';
+  } else {
+    video.pause();
+    btnPlayPause.textContent = '▶ Play';
   }
-  
-  // Tombol replay
-  if (replayAnimasi) {
-    replayAnimasi.addEventListener('click', function() {
-      videoAnimasi.currentTime = 0;
-      videoAnimasi.muted = false;
-      videoAnimasi.play().catch(e => console.log('Replay error:', e));
-    });
-  }
-}
+});
+
+// Seekbar update saat video berjalan
+video.addEventListener('timeupdate', () => {
+  seekbar.max = video.duration;
+  seekbar.value = video.currentTime;
+});
+
+// Seekbar drag
+seekbar.addEventListener('input', () => {
+  video.currentTime = seekbar.value;
+});
+
+// Kecepatan
+speedControl.addEventListener('change', () => {
+  video.playbackRate = parseFloat(speedControl.value);
+});
+
+// Putar Ulang
+btnReplay.addEventListener('click', () => {
+  video.currentTime = 0;
+  video.play();
+  btnPlayPause.textContent = '⏸ Pause';
+});
 
 // ── RATING BINTANG ───────────────────────────────────────────
 const ratingWrapper = document.getElementById('rating-bintang');
